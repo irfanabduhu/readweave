@@ -9,7 +9,7 @@ argument-hint: "[path to .epub or book file]"
 
 You will create two outputs from a book file:
 1. A comprehensive **markdown reading guide** (`[book-name]-reading-guide.md`)
-2. An elegant **HTML slide presentation** (`gist.html`)
+2. An elegant **HTML slide presentation** (`[book-name]-gist.html`)
 
 Follow the five phases below in order. Phases 4a and 4b are independent and can run in parallel.
 
@@ -125,7 +125,7 @@ Save as `[book-name]-reading-guide.md` in the working directory. Use kebab-case 
 - Use `<em>` for italics within excerpts (book titles, emphasis)
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 
-Save as `gist.html` in the working directory.
+Save as `[book-name]-gist.html` in the working directory. Derive `[book-name]` from the book title: lowercase, kebab-case, drop articles (a, an, the). For example, *The Structure of Scientific Revolutions* becomes `structure-scientific-revolutions-gist.html`.
 
 ---
 
@@ -144,6 +144,6 @@ Review both outputs:
 ## Important Notes
 
 - **Direct excerpts only**: The presentation shows the author's actual words, not paraphrase. The margin notes provide the analysis.
-- **Single-file HTML**: The gist.html must be completely self-contained. All CSS inline in `<style>`, all JS inline in `<script>`. Only external dependency is Google Fonts CDN.
+- **Single-file HTML**: The output HTML must be completely self-contained. All CSS inline in `<style>`, all JS inline in `<script>`. Only external dependency is Google Fonts CDN.
 - **Preserve the aesthetic**: The book-page design (parchment colors, Garamond fonts, Caveat margin notes, drop caps) is integral to the experience. Do not modify the CSS from the template.
 - **The margin notes are the value-add**: Anyone can excerpt a book. The margin notes — analytical, cross-referential, concrete — are what make this a book *club* rather than a book *report*.

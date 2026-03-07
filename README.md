@@ -38,7 +38,7 @@ claude --plugin-dir ~/book-club
 
 1. **`[book-name]-reading-guide.md`** — Comprehensive markdown reading guide with chapter analysis, key quotations, critical perspectives, and discussion questions.
 
-2. **`gist.html`** — Single-file HTML slide presentation with book-page aesthetic, direct excerpts, handwritten-style margin annotations, and keyboard/touch navigation. Works offline, no dependencies.
+2. **`[book-name]-gist.html`** — Single-file HTML slide presentation with book-page aesthetic, direct excerpts, handwritten-style margin annotations, and keyboard/touch navigation. Works offline, no dependencies.
 
 ## Supported formats
 
