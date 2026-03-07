@@ -4,23 +4,31 @@ A Claude Code plugin that creates book club presentations and reading guides fro
 
 ## Installation
 
-Clone this repository:
+### Option 1: Install as a marketplace plugin (permanent)
+
+Register the repo as a marketplace, then install:
+
+```bash
+claude plugin marketplace add https://github.com/irfanabduhu/book-club.git
+claude plugin install book-club
+```
+
+The plugin will be available in all future sessions.
+
+### Option 2: Load per-session
+
+```bash
+claude --plugin-dir /path/to/book-club
+```
+
+Clone the repo first if using this approach:
 
 ```bash
 git clone https://github.com/irfanabduhu/book-club.git ~/book-club
-```
-
-Then launch Claude Code with the `--plugin-dir` flag:
-
-```bash
 claude --plugin-dir ~/book-club
 ```
 
-You can clone it anywhere you like — just point `--plugin-dir` at the directory containing `.claude-plugin/`.
-
 ## Usage
-
-Once Claude Code is running with the plugin loaded:
 
 ```
 /book-club path/to/book.epub

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "book-club",
+  "description": "Book club presentation and reading guide generator",
+  "owner": {
+    "name": "Irfanul Hoque"
+  },
+  "plugins": [
+    {
+      "name": "book-club",
+      "description": "Create book club presentations and reading guides from epub/PDF/text files. Produces elegant HTML slide presentations with book-page aesthetic and comprehensive markdown reading guides.",
+      "author": {
+        "name": "Irfanul Hoque"
+      },
+      "source": "./",
+      "category": "education"
+    }
+  ]
+}
