@@ -1,7 +1,0 @@
-{
-  "name": "book-club",
-  "description": "Create book club presentations and reading guides from epub/PDF/text files. Produces elegant HTML slide presentations with book-page aesthetic and comprehensive markdown reading guides.",
-  "author": {
-    "name": "Irfanul Hoque"
-  }
-}

@@ -1,13 +1,13 @@
 # Book Study Slide Design Guide
 
-This extends the book-club design system with slide types for multi-book analysis.
+This extends the read skill design system with slide types for multi-book analysis.
 
 ## Color Palette
 
-Inherits the full book-club palette, plus book-specific accent colors for visual differentiation:
+Inherits the full read skill palette, plus book-specific accent colors for visual differentiation:
 
 ```css
-/* Base palette (same as book-club) */
+/* Base palette (same as read skill) */
 --cream: #FAF6F0;
 --page: #FFFDF8;
 --ink: #2C2321;
@@ -33,7 +33,7 @@ Body background: `#E8E0D4`
 
 ## Typography
 
-Same as book-club. See the book-club design guide for the full type scale.
+Same as read skill. See the read skill design guide for the full type scale.
 
 ## New Slide Types
 
@@ -179,7 +179,7 @@ Note: The `data-book` attribute applies a subtle left-border color to the page, 
 </div>
 ```
 
-### Discussion Slide (same structure as book-club)
+### Discussion Slide (same structure as read skill)
 ```html
 <div class="slide no-margin" data-title="Discussion">
   <div class="page-spread">
@@ -230,7 +230,7 @@ The `data-book` attribute controls the subtle left-border color on excerpt slide
 
 ## Margin Note Quality Criteria
 
-Inherits all criteria from book-club, plus:
+Inherits all criteria from read skill, plus:
 
 ### Cross-Book Annotations (the unique value-add):
 - **Forward references**: "This definition will be narrowed in [Later Book]..."

@@ -1,7 +1,7 @@
 ---
-name: book-study
+name: study
 description: |
-  Comprehensive multi-book study that traces intellectual evolution across an author's or tradition's body of work. Analyzes multiple books together, identifies how ideas develop and transform, and optionally suggests reading order based on conceptual dependencies. Produces a unified HTML slide presentation and a markdown study guide. Invoke with /book-study.
+  Trace intellectual evolution across multiple books. Trigger when user provides multiple book files or asks to study, compare, or trace ideas across an author's or tradition's body of work. Analyzes how ideas develop and transform, suggests reading order, and produces a unified HTML slide presentation and a markdown study guide. Invoke with /study.
 argument-hint: "[paths to multiple .epub, .pdf, or book files]"
 ---
 
@@ -28,6 +28,25 @@ Follow the seven phases below. Phases 5a and 5b are independent and can run in p
 4. Give each agent the **detailed extraction brief** below
 
 **For `.pdf` files:**
+
+First, detect whether each PDF is scanned (image-based) or has extractable text:
+
+```bash
+# Test if PDF has extractable text (check first 5 pages)
+pdftotext "$PDF_PATH" - 2>/dev/null | head -c 500
+```
+
+- **If output is empty or near-empty** (fewer than ~50 characters of real text): the PDF is scanned. Run OCR before proceeding:
+  ```bash
+  ocrmypdf --skip-text --output-type pdf "$PDF_PATH" "${PDF_PATH%.pdf}-ocr.pdf"
+  ```
+  Then use the OCR'd file (`*-ocr.pdf`) for all subsequent reading. Inform the user that OCR was performed and how long it took.
+
+- **If output contains readable text**: proceed normally.
+
+**Important**: Run OCR for all scanned PDFs in parallel before launching extraction agents. OCR can take 1-5 minutes per book depending on length.
+
+After OCR (if needed):
 - Read with page ranges, launch parallel agents per page range
 - Give each agent the same extraction brief
 
@@ -177,7 +196,7 @@ Design the presentation's flow. The presentation should NOT be "Book 1 slides, t
 
 ## Phase 4: Write Margin Annotations
 
-For each selected excerpt, write **2-3 margin notes**. Follow the same quality standards as the book-club skill, with one addition:
+For each selected excerpt, write **2-3 margin notes**. Follow the same quality standards as the read skill, with one addition:
 
 ### Cross-book annotations are the unique value-add:
 - **Forward references**: "This definition will be significantly narrowed in [Later Book], where..."
@@ -189,7 +208,7 @@ For each selected excerpt, write **2-3 margin notes**. Follow the same quality s
 - Descriptive concepts: "Semantic Drift", "The Revised Criterion", "Abandoned Framework", "Conceptual Continuity"
 - Bad: "Connection!", "Cross-Reference", "See Also", "Compare"
 
-### Note body rules (same as book-club):
+### Note body rules (same as the read skill):
 - **Analytical, not summary** — NEVER restate what the excerpt says
 - **Cross-referential** — connect across books, to other thinkers, to broader traditions
 - **Hidden implications** — surface what the reader might miss
@@ -227,6 +246,20 @@ Save as `[study-name]-study-guide.md`. Derive the name from the author or unifyi
 
 ## Phase 5b: Generate HTML Slides
 
+### Chunked generation strategy
+
+For studies with 4+ books, generating all slides in a single agent risks timeout. Use **chunked generation** instead:
+
+1. **Prepare the scaffold**: Read the template, replace placeholders, and generate the structural slides (title, library, roadmap, reading order, discussion, closing) directly in the main context. Write this scaffold to the output file.
+
+2. **Generate content slides in batches**: Launch parallel agents, each responsible for a **conceptual chunk** (e.g., one thread or 2-3 books' worth of excerpt/evolution slides). Each agent returns its batch of slide HTML as raw text.
+
+3. **Assemble**: Insert the batched slide HTML into the scaffold at the correct positions, maintaining the narrative arc planned in Phase 3c.
+
+For studies with 2-3 books, single-pass generation is acceptable if the total slide count stays under ~35.
+
+### Setup
+
 1. **Read the template** from [assets/study-template.html](assets/study-template.html)
 2. **Read the design guide** from [references/design-guide.md](references/design-guide.md)
 3. **Replace placeholders**:
@@ -244,7 +277,7 @@ Save as `[study-name]-study-guide.md`. Derive the name from the author or unifyi
 - **Slide 2 — Roadmap**: `class="slide no-margin"` — the intellectual arc in brief. Uses a `.timeline` or `.evolution-diagram` showing how the central idea develops. Frame what follows.
 
 - **Slides 3 through N — Content slides** (the bulk): A mix of:
-  - **Excerpt slides** (`class="slide"`): Same as book-club — direct excerpts with margin notes. The `page-chapter` label includes the book title: `"Book Title &middot; Chapter N"`.
+  - **Excerpt slides** (`class="slide"`): Same as the read skill — direct excerpts with margin notes. The `page-chapter` label includes the book title: `"Book Title &middot; Chapter N"`.
   - **Evolution slides** (`class="slide evolution-slide"`): Side-by-side or sequential comparison of how a concept appears in different books. Uses `.evolution-panel` elements.
   - **Book transition slides** (`class="slide no-margin book-transition"`): Brief orienting slide when focus shifts to a new book. Shows book title, year, and a one-sentence framing of what this book contributes.
   - **Thread slides** (`class="slide no-margin"`): Synthesis slides that step back and analyze a cross-book pattern. Uses commentary prose, not excerpts.
@@ -256,7 +289,7 @@ Save as `[study-name]-study-guide.md`. Derive the name from the author or unifyi
 - **Slide N+3 — Closing**: `class="slide no-margin"` — the intellectual project distilled + a final quotation + attribution.
 
 ### Formatting rules:
-- Same typographic rules as book-club (elisions, em-dashes, smart quotes, drop caps)
+- Same typographic rules as the read skill (elisions, em-dashes, smart quotes, drop caps)
 - Each slide needs a descriptive `data-title` attribute
 - First slide has `class="active"`
 - Use `data-book` attribute on excerpt slides to identify which book (enables subtle visual differentiation)

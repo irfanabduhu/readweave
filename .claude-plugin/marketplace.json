@@ -1,14 +1,14 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "irfanabduhu",
-  "description": "Book club presentation and reading guide generator",
+  "description": "Distill books into elegant presentations and reading guides",
   "owner": {
     "name": "Irfanul Hoque"
   },
   "plugins": [
     {
-      "name": "book-club",
-      "description": "Create book club presentations and reading guides from epub/PDF/text files. Produces elegant HTML slide presentations with book-page aesthetic and comprehensive markdown reading guides.",
+      "name": "read",
+      "description": "Distill a book into an elegant HTML slide presentation and a comprehensive markdown reading guide. Supports epub, PDF (including scanned), and text files.",
       "author": {
         "name": "Irfanul Hoque"
       },
@@ -16,8 +16,8 @@
       "category": "education"
     },
     {
-      "name": "book-study",
-      "description": "Comprehensive multi-book study that traces intellectual evolution across an author's body of work. Analyzes multiple books together, identifies how ideas develop and transform, suggests reading order, and produces a unified HTML slide presentation with cross-book analysis.",
+      "name": "study",
+      "description": "Trace intellectual evolution across multiple books. Analyzes how ideas develop and transform, suggests reading order, and produces a unified HTML slide presentation with cross-book analysis.",
       "author": {
         "name": "Irfanul Hoque"
       },

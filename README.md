@@ -1,6 +1,23 @@
 # Book Club Plugin
 
-A Claude Code plugin that creates book club presentations and reading guides from any book file.
+A Claude Code plugin that distills books into elegant presentations and reading guides.
+
+## Prerequisites
+
+For scanned PDFs (image-based), the plugin requires `ocrmypdf` and `poppler` (for `pdftotext`) to automatically detect and OCR them before extraction:
+
+```bash
+# macOS
+brew install ocrmypdf poppler
+
+# Ubuntu/Debian
+sudo apt install ocrmypdf poppler-utils
+
+# Fedora
+sudo dnf install ocrmypdf poppler-utils
+```
+
+These are only needed if you work with scanned PDFs. Text-based PDFs, EPUBs, and plain text files work without any additional dependencies.
 
 ## Installation
 
@@ -31,7 +48,7 @@ claude --plugin-dir ~/book-club
 ## Usage
 
 ```
-/book-club path/to/book.epub
+/read path/to/book.epub
 ```
 
 ## What it produces
@@ -43,7 +60,7 @@ claude --plugin-dir ~/book-club
 ## Supported formats
 
 - `.epub` (extracted and read chapter-by-chapter)
-- `.pdf` (read directly)
+- `.pdf` — text-based (read directly) and scanned/image-based (auto-OCR'd, then read)
 - Plain text / `.txt`
 
 ## How it works

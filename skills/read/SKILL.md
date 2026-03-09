@@ -1,7 +1,7 @@
 ---
-name: book-club
+name: read
 description: |
-  Create book club presentations and reading guides from epub, PDF, or text files. Trigger on requests to create book club presentations, reading session guides, book analysis slides, or when user provides an epub/book file and wants to understand/present it. Produces both a comprehensive markdown reading guide and an elegant single-file HTML slide presentation with book-page aesthetic, direct excerpts, and margin annotations. Invoke with /book-club.
+  Distill a single book into a reading guide and slide presentation. Trigger on requests to read, distill, or present a book, or when user provides an epub/PDF/text file and wants to understand or present it. Produces a comprehensive markdown reading guide and an elegant single-file HTML slide presentation with direct excerpts and analytical margin annotations. Invoke with /read.
 argument-hint: "[path to .epub or book file]"
 ---
 
@@ -26,6 +26,23 @@ Follow the five phases below in order. Phases 4a and 4b are independent and can 
 4. Give each agent the **detailed extraction brief** below
 
 **For `.pdf` files:**
+
+First, detect whether the PDF is scanned (image-based) or has extractable text:
+
+```bash
+# Test if PDF has extractable text (check first 5 pages)
+pdftotext "$PDF_PATH" - 2>/dev/null | head -c 500
+```
+
+- **If output is empty or near-empty** (fewer than ~50 characters of real text): the PDF is scanned. Run OCR before proceeding:
+  ```bash
+  ocrmypdf --skip-text --output-type pdf "$PDF_PATH" "${PDF_PATH%.pdf}-ocr.pdf"
+  ```
+  Then use the OCR'd file (`*-ocr.pdf`) for all subsequent reading. Inform the user that OCR was performed and how long it took.
+
+- **If output contains readable text**: proceed normally.
+
+After OCR (if needed):
 - Read the PDF directly using the Read tool with page ranges
 - Launch parallel agents to cover different page ranges
 - Give each agent the same extraction brief
