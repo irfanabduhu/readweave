@@ -5,7 +5,7 @@ argument-hint: "[URL to article or essay]"
 
 # Digest Skill
 
-You will create one output from a web article URL:
+You will create one output from the following web article URL: $ARGUMENTS
 - An elegant **HTML slide presentation** (`[article-name]-digest.html`)
 
 Follow the four phases below in order.

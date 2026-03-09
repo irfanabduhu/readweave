@@ -1,6 +1,6 @@
 # ReadWeave Plugin
 
-A Claude Code plugin that distills books and web writings into elegant presentations and reading guides.
+A unified plugin for both Claude Code and OpenCode that distills books and web writings into elegant presentations and reading guides.
 
 ## Commands
 
@@ -30,33 +30,38 @@ These are only needed if you work with scanned PDFs. Text-based PDFs, EPUBs, and
 
 ## Installation
 
-### From the marketplace (recommended)
+### For Claude Code
+
+**From the marketplace (recommended):**
 
 ```bash
-# Add the marketplace
 claude plugin marketplace add irfanabduhu/readweave
-
-# Install the plugin
 claude plugin install readweave@irfanabduhu
 ```
 
-Or use the interactive plugin browser:
-
-```bash
-claude plugin  # Go to "Discover" tab to browse and install
-```
-
-To update when new versions are available:
-
-```bash
-claude plugin marketplace update irfanabduhu
-```
-
-### Load per-session (alternative)
+**Per-session (alternative):**
 
 ```bash
 git clone https://github.com/irfanabduhu/readweave.git ~/readweave
 claude --plugin-dir ~/readweave
+```
+
+### For OpenCode
+
+**Add to your project:**
+
+Copy the `commands/` folder from this repository into your project's `.opencode` directory:
+
+```bash
+cp -r path/to/readweave/commands/. .opencode/commands/
+```
+
+**Install globally:**
+
+To make these commands available everywhere, copy them to your global OpenCode config directory:
+
+```bash
+cp -r path/to/readweave/commands/. ~/.config/opencode/commands/
 ```
 
 ## Usage

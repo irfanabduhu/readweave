@@ -5,7 +5,7 @@ argument-hint: "[URL to blog index or writings page]"
 
 # Crawl Skill
 
-You will create one output from a blog or writings index URL:
+You will create one output from the following blog or writings index URL: $ARGUMENTS
 - A unified **HTML slide presentation** (`[author-or-theme]-crawl.html`)
 
 The presentation weaves articles into thematic **threads** — clusters of articles that develop a shared idea — and presents them as a coherent intellectual map rather than a chronological list.

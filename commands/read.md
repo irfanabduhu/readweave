@@ -5,7 +5,7 @@ argument-hint: "[path to .epub or book file]"
 
 # ReadWeave Skill
 
-You will create two outputs from a book file:
+You will create two outputs from the following book file: $ARGUMENTS
 1. A comprehensive **markdown reading guide** (`[book-name]-reading-guide.md`)
 2. An elegant **HTML slide presentation** (`[book-name]-gist.html`)
 

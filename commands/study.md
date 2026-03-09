@@ -5,7 +5,7 @@ argument-hint: "[paths to multiple .epub, .pdf, or book files]"
 
 # Book Study Skill
 
-You will create two outputs from **multiple book files**:
+You will create two outputs from the following multiple book files: $ARGUMENTS
 1. A comprehensive **markdown study guide** (`[study-name]-study-guide.md`)
 2. A unified **HTML slide presentation** (`[study-name]-study.html`)
 
