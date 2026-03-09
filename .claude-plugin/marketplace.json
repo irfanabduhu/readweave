@@ -12,7 +12,7 @@
       "author": {
         "name": "Irfanul Hoque"
       },
-      "source": "../skills/read",
+      "source": "./skills/read",
       "category": "education"
     },
     {
@@ -21,7 +21,7 @@
       "author": {
         "name": "Irfanul Hoque"
       },
-      "source": "../skills/study",
+      "source": "./skills/study",
       "category": "education"
     },
     {
@@ -30,7 +30,7 @@
       "author": {
         "name": "Irfanul Hoque"
       },
-      "source": "../skills/digest",
+      "source": "./skills/digest",
       "category": "education"
     },
     {
@@ -39,7 +39,7 @@
       "author": {
         "name": "Irfanul Hoque"
       },
-      "source": "../skills/crawl",
+      "source": "./skills/crawl",
       "category": "education"
     }
   ]

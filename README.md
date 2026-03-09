@@ -30,24 +30,34 @@ These are only needed if you work with scanned PDFs. Text-based PDFs, EPUBs, and
 
 ## Installation
 
-### Option 1: Install as a marketplace plugin (permanent)
+### From the marketplace (recommended)
 
-Register the repo as a marketplace, then install:
-
-```bash
-claude plugin marketplace add https://github.com/irfanabduhu/book-club.git
-claude plugin install book-club
-```
-
-The plugin will be available in all future sessions.
-
-### Option 2: Load per-session
+Add the marketplace, then install individual skills:
 
 ```bash
-claude --plugin-dir /path/to/book-club
+# Add the marketplace
+claude plugin marketplace add irfanabduhu/book-club
+
+# Install skills (pick the ones you want)
+claude plugin install read@irfanabduhu
+claude plugin install study@irfanabduhu
+claude plugin install digest@irfanabduhu
+claude plugin install crawl@irfanabduhu
 ```
 
-Clone the repo first if using this approach:
+Or use the interactive plugin browser:
+
+```bash
+claude plugin  # Go to "Discover" tab to browse and install
+```
+
+To update plugins when new versions are available:
+
+```bash
+claude plugin marketplace update irfanabduhu
+```
+
+### Load per-session (alternative)
 
 ```bash
 git clone https://github.com/irfanabduhu/book-club.git ~/book-club
