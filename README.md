@@ -4,12 +4,12 @@ A unified plugin for both Claude Code and OpenCode that distills books and web w
 
 ## Commands
 
-| Command | Scope | Input | Output |
-|---------|-------|-------|--------|
-| `/readweave:read` | Single book | `.epub`, `.pdf`, or `.txt` file | HTML slides + markdown reading guide |
-| `/readweave:study` | Multiple books | Multiple book files | Unified HTML slides + markdown study guide |
-| `/readweave:digest` | Single web article | URL to article or essay | HTML slides |
-| `/readweave:crawl` | Blog or writings page | URL to index/articles page | Unified HTML slides grouped by thematic nets |
+| Command             | Scope                 | Input                           | Output                                          |
+| ------------------- | --------------------- | ------------------------------- | ----------------------------------------------- |
+| `/readweave:read`   | Single book           | `.epub`, `.pdf`, or `.txt` file | HTML slides + markdown reading guide            |
+| `/readweave:study`  | Multiple books        | Multiple book files             | Unified HTML slides + markdown study guide      |
+| `/readweave:digest` | Single web article    | URL to article or essay         | HTML slides                                     |
+| `/readweave:crawl`  | Blog or writings page | URL to index/articles page      | Unified HTML slides grouped by thematic threads |
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ cp -r path/to/readweave/commands/. ~/.config/opencode/commands/
 # Deep dive into a web article
 /readweave:digest https://paulgraham.com/greatwork.html
 
-# Crawl a blog and weave articles into thematic nets
+# Crawl a blog and weave articles into thematic threads
 /readweave:crawl https://paulgraham.com/articles.html
 ```
 
@@ -105,11 +105,11 @@ cp -r path/to/readweave/commands/. ~/.config/opencode/commands/
 
 ### /readweave:crawl — Blog weaving
 1. **Discover** — Fetches index page, extracts all article links and metadata
-2. **Map & Group** — Classifies articles into 3-7 thematic nets from titles and descriptions
-3. **Fetch & Extract** — Parallel agents fetch full articles per net, extract candidate passages
-4. **Curate & Weave** — Selects excerpts per net, orders by conceptual progression, plans cross-net connections
-5. **Margin Annotations** — Writes cross-article and cross-net annotations
-6. **Generate HTML Slides** — Produces a unified presentation with net transitions and evolution slides
+2. **Map & Group** — Classifies articles into 3-7 thematic threads from titles and descriptions
+3. **Fetch & Extract** — Parallel agents fetch full articles per thread, extract candidate passages
+4. **Curate & Weave** — Selects excerpts per thread, orders by conceptual progression, plans cross-thread connections
+5. **Margin Annotations** — Writes cross-article and cross-thread annotations
+6. **Generate HTML Slides** — Produces a unified presentation with thread transitions and evolution slides
 
 ## Supported formats
 
