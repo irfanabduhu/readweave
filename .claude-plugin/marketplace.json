@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "readweave",
-      "description": "Distill books and web writings into elegant presentations and reading guides. Includes /read (single book), /study (multi-book), /digest (web article), and /crawl (blog index) commands.",
+      "description": "Distill books, web writings, and video into elegant presentations and reading guides. Includes /read (single book), /study (multi-book), /digest (web article), /crawl (blog index), /watch (YouTube video), and /playlist (YouTube playlist) commands.",
       "author": {
         "name": "Irfanul Hoque"
       },
