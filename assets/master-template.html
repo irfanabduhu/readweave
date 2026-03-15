@@ -31,6 +31,32 @@
     --challenge-accent: #8B3A3A;
   }
 
+  /* ───── NIGHT THEME ───── */
+  [data-theme="night"] {
+    --cream: #2A2725;
+    --page: #242220;
+    --ink: #E8E0D4;
+    --ink-light: #C4B8A8;
+    --ink-lighter: #8B7E72;
+    --accent: #C45A5A;
+    --gold: #D4AA4F;
+    --gold-soft: rgba(212, 170, 79, 0.12);
+    --divider: #3D3835;
+    --shadow: rgba(0, 0, 0, 0.25);
+    --page-shadow: rgba(0, 0, 0, 0.50);
+    --note-ink: #A89888;
+    --note-accent: #C48B5A;
+    --code-bg: #1E1C1A;
+    --code-text: #D4C8B8;
+    --code-surface: #3D3530;
+    --code-accent: #C48B5A;
+    --recall-bg: rgba(196, 90, 90, 0.08);
+    --challenge-accent: #C45A5A;
+  }
+  [data-theme="night"] body { background: #1A1816; }
+  [data-theme="night"] .sidebar { background: #0F0E0D; color: #D4C8B8; }
+  [data-theme="night"] .progress-bar { background: rgba(255,255,255,0.04); }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { font-size: 18px; }
 
@@ -457,6 +483,24 @@
   /* Code margin notes */
   .code-slide .margin-note .note-label { color: #7C4D27; }
 
+  /* ───── NIGHT CODE OVERRIDES ───── */
+  [data-theme="night"] .code-slide .page { background: var(--page); }
+  [data-theme="night"] pre[class*="language-"],
+  [data-theme="night"] .page pre { background: #1E1C1A !important; border-color: rgba(255,255,255,0.06); }
+  [data-theme="night"] code[class*="language-"],
+  [data-theme="night"] .page pre code { color: #D4C8B8 !important; text-shadow: none !important; }
+  [data-theme="night"] .token.comment, [data-theme="night"] .token.prolog, [data-theme="night"] .token.doctype, [data-theme="night"] .token.cdata { color: #7A7068 !important; }
+  [data-theme="night"] .token.punctuation { color: #9B8B7E !important; }
+  [data-theme="night"] .token.property, [data-theme="night"] .token.tag, [data-theme="night"] .token.boolean, [data-theme="night"] .token.number, [data-theme="night"] .token.constant, [data-theme="night"] .token.symbol { color: #D47070 !important; }
+  [data-theme="night"] .token.selector, [data-theme="night"] .token.attr-name, [data-theme="night"] .token.string, [data-theme="night"] .token.char, [data-theme="night"] .token.builtin { color: #A4CC68 !important; }
+  [data-theme="night"] .token.operator, [data-theme="night"] .token.entity, [data-theme="night"] .token.url { color: #9B8B7E !important; }
+  [data-theme="night"] .token.atrule, [data-theme="night"] .token.attr-value, [data-theme="night"] .token.keyword { color: #D4AA4F !important; }
+  [data-theme="night"] .token.function, [data-theme="night"] .token.class-name { color: #B88ED8 !important; }
+  [data-theme="night"] .token.regex, [data-theme="night"] .token.important, [data-theme="night"] .token.variable { color: #D4985A !important; }
+  [data-theme="night"] .token.inserted { color: #A4CC68 !important; }
+  [data-theme="night"] .token.deleted { color: #D47070 !important; }
+  [data-theme="night"] .code-slide .margin-note .note-label { color: #C48B5A; }
+
   /* ───── PREREQUISITES SLIDE ───── */
   .prereq-section {
     margin: 0.8rem 0;
@@ -613,6 +657,18 @@
   .nav-arrows button:hover { background: var(--ink); color: var(--page); border-color: var(--ink); }
   .nav-arrows button:disabled { opacity: 0.25; cursor: default; background: var(--page); color: var(--ink-lighter); }
 
+  /* ───── THEME TOGGLE ───── */
+  .theme-toggle {
+    position: fixed; bottom: 24px; left: 24px; z-index: 900;
+    width: 36px; height: 36px;
+    border: 1px solid var(--divider); background: var(--page);
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease; color: var(--ink-lighter);
+    font-size: 1.1rem; box-shadow: 0 1px 4px var(--shadow);
+  }
+  .theme-toggle:hover { background: var(--ink); color: var(--page); border-color: var(--ink); }
+
   @media (max-width: 900px) {
     .margin { display: none; }
     .page { border-radius: 3px; width: 100%; max-width: 660px; }
@@ -636,6 +692,8 @@
 </style>
 </head>
 <body>
+<script>if(localStorage.getItem('readweave-theme')==='night')document.documentElement.setAttribute('data-theme','night');</script>
+<button class="theme-toggle" id="themeToggle" title="Toggle night mode">&#9790;</button>
 
 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 <div class="slide-counter" id="slideCounter"></div>
@@ -754,6 +812,22 @@
     const dx=e.changedTouches[0].screenX-tx, dy=e.changedTouches[0].screenY-ty;
     if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>60){if(dx<0)go(cur+1);else go(cur-1);}
   },{passive:true});
+
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  if (document.documentElement.getAttribute('data-theme') === 'night') themeToggle.textContent = '\u2600';
+  themeToggle.onclick = () => {
+    const isNight = document.documentElement.getAttribute('data-theme') === 'night';
+    if (isNight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('readweave-theme', 'day');
+      themeToggle.textContent = '\u263E';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'night');
+      localStorage.setItem('readweave-theme', 'night');
+      themeToggle.textContent = '\u2600';
+    }
+  };
 
   update();
 })();
