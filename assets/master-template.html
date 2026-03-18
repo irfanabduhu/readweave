@@ -389,6 +389,35 @@
   .cycle-step.hl { background: var(--accent); color: #fff; border-color: var(--accent); }
   .cycle-arrow { font-size: 0.85rem; color: var(--divider); }
 
+  .level-tower {
+    display: flex; flex-direction: column; gap: 0;
+    max-width: 320px; margin-left: auto; margin-right: auto;
+  }
+  .level-row {
+    display: flex; align-items: center; gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .level-row:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+  .level-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 300;
+    color: var(--ink-lighter); width: 2rem;
+    text-align: center; padding: 10px 0;
+    flex-shrink: 0;
+  }
+  .level-name {
+    font-family: 'Inter', sans-serif; font-size: 0.7rem;
+    font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-light);
+    padding: 10px 14px; flex-grow: 1;
+    border-left: 2px solid rgba(255,255,255,0.06);
+  }
+  .level-name.hl {
+    color: var(--accent); font-weight: 600;
+    border-left-color: var(--accent);
+    background: linear-gradient(90deg, rgba(180,100,90,0.08) 0%, transparent 100%);
+  }
+
   .discussion-q {
     background: var(--gold-soft); border-radius: 4px;
     padding: 0.8rem 1rem; margin: 0.5rem 0;

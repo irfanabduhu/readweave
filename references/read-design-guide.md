@@ -65,7 +65,7 @@ Body background: `#E8E0D4`
         <h2>The Big Idea</h2>
         <div class="page-divider"></div>
         <p class="commentary">Summary of the book's core argument with <strong>key terms bold</strong>.</p>
-        <!-- Optional: cycle-diagram, concept-card, etc. -->
+        <!-- Optional: cycle-diagram for horizontal sequences, level-tower for hierarchies -->
         <p class="commentary">Additional commentary framing what follows.</p>
       </div>
     </div>

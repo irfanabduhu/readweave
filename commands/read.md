@@ -261,7 +261,7 @@ After all agents complete, follow the verification checklist from the chunked ge
 
 ### Slide types:
 - **Slide 0 — Title**: `class="slide active no-margin"` — book title, author, year, opening quotation. Include `begin-hint`.
-- **Slide 1 — Overview**: `class="slide no-margin"` — the book's core argument. Use a visual diagram (cycle-diagram, concept-cards, or similar) plus brief commentary. Frame what follows: "The following pages present [Author]'s argument *in [their] own words*."
+- **Slide 1 — Overview**: `class="slide no-margin"` — the book's core argument. Use a visual diagram (cycle-diagram for horizontal sequences, level-tower for hierarchies, concept-cards, or similar) plus brief commentary. Frame what follows: "The following pages present [Author]'s argument *in [their] own words*."
 - **Slides 2 through N — Excerpts**: `class="slide"` — direct book excerpts with margin annotations. This is the bulk of the presentation (20-30 slides). Each slide has:
   - `page-chapter` label with chapter number and name
   - `page-divider`
