@@ -68,7 +68,7 @@ Launch **parallel agents** (one per video, or group 2-3 short videos per agent).
    - Use `yt-dlp --write-auto-sub --sub-lang en --skip-download --print-to-file subtitle <output_path> <URL>` to extract subtitles
    - If `yt-dlp` is unavailable, use WebFetch to retrieve the transcript from a transcript service
 2. If no transcript is available for a video, note it and skip — do not block the entire playlist
-3. Cleans the transcript: remove duplicate phrases, fix obvious speech-to-text errors, normalize punctuation
+3. Cleans the transcript: remove duplicate phrases and repetitive words, fix obvious speech-to-text errors, normalize punctuation
 4. Divides the transcript into logical sections based on topic shifts
 5. For each video, extracts **5-10 candidate passages** (fewer than books — talks are shorter and denser)
 6. Records for each passage:
@@ -133,6 +133,10 @@ Proceed with the user's selection.
 2. **Order excerpts within each video** by their natural progression within the talk — follow the speaker's own arc.
 
 3. **Plan cross-video connections**: Identify moments where a passage in one video echoes, extends, or challenges a passage from another video. These will become cross-reference margin notes.
+
+**Cleaning repetitive words from excerpts:**
+
+Apply the same cleanup as the watch skill: remove false starts ("what I mean is, what I mean is"), stammer repetitions ("the the the"), filler chains ("um, um" / "you know, you know"), hedge piles ("kind of sort of basically"), echo phrases, auto-caption stutters ("I I I think"), and confirming ticks ("right? right?"). Keep rhythm words and rhetorical repetitions that serve emphasis. Make the excerpt readable on the page while preserving the speaker's natural voice.
 
 ### Selection quality tests:
 1. **The arc test**: Does this excerpt advance the playlist's intellectual progression, or is it just a good passage that happens to be in this video?

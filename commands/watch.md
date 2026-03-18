@@ -46,6 +46,7 @@ If the user's input contains `--fresh`, ignore all checkpoints and start from sc
 ### Parse the transcript:
 
 - Clean auto-generated caption artifacts: remove duplicate phrases, fix obvious speech-to-text errors where meaning is clear, normalize punctuation
+- **Remove repetitive words and verbal tics**: Edit out stammers, false starts, and habitual filler phrases that don't carry meaning
 - Preserve the speaker's natural phrasing — do not "improve" their language
 - Identify **timestamps** for key moments where possible (even approximate ones help)
 - Divide the transcript into logical sections based on topic shifts, pauses, or explicit transitions ("Now let's talk about...", "The next thing is...")
@@ -107,6 +108,20 @@ From the candidate pool, select **8-15 excerpts** for the presentation.
 - Sweet spot: 40-150 words / 2-6 sentences. Spoken language is looser than written — trim light filler but preserve the speaker's natural rhythm.
 - Never truncate mid-thought. Use `<span class="elide">[&hellip;]</span>` for minimal trims.
 - Preserve the speaker's wording. Clean caption artifacts, but do not rewrite their sentences into "better" prose.
+
+**Cleaning repetitive words from excerpts:**
+
+Video transcripts contain verbal patterns that read poorly on the page. Edit these out:
+
+- **False starts and restarts**: "What I mean is, what I mean is..." → "What I mean is..."
+- **Stammer repetitions**: "the the the key point" → "the key point"
+- **Filler chains**: "um, um, um" or "you know, you know, you know" → remove entirely or reduce to one
+- **Hedge piles**: "kind of sort of basically" → keep the strongest one or remove all if redundant
+- **Echo phrases**: "it's important, it's important to understand" → "it's important to understand"
+- **Auto-caption stutters**: "going to going to" or "I I I think" → "going to" / "I think"
+- **Confirming ticks**: "right? right?" or "okay? okay?" → remove trailing confirmations
+
+**Keep the speaker's voice**: rhythm words ("well," "so," "now," "look") and emphasis repetitions ("again and again," "over and over") that serve rhetorical purpose should stay. Only remove mechanical repetition that serves no communicative function.
 
 ### Checkpoint: Save `selection.md` to `.readweave/[video-slug]/` with the argument map, selected excerpts, and visual dependency notes.
 
