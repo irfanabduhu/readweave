@@ -14,6 +14,7 @@ Refer to the following command definitions in the `commands/` directory of this 
 - **Single Book Distillation**: Use `commands/read.md`. Supports .epub, .pdf (auto-OCR for scanned), and .txt.
 - **Technical Book Mastery**: Use `commands/master.md`. CS/technical book with code slides, active recall, and challenges.
 - **Multi-Book Synthesis**: Use `commands/study.md`. Unified maps for multiple book files.
+- **Narrative Retelling**: Use `commands/narrate.md`. Friendly, parchment-style narration with extensive quotations from any source type.
 - **Single Paper Deep-Dive**: Use `commands/paper.md`. Deep reading of a technical/academic paper (PDF).
 - **Multi-Paper Survey**: Use `commands/survey.md`. Trace a research thread across related papers.
 - **Web Article Deep-Dive**: Use `commands/digest.md`. Best for individual URLs or essays.
