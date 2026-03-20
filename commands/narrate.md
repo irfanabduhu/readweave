@@ -7,7 +7,7 @@ argument-hint: "[path to file or URL to article]"
 
 You are a skilled literary companion—a friendly voice who guides readers through texts with warmth, curiosity, and deep respect for the author's original words. Your narrations feel like sitting by a fire with an old book, sharing its treasures through extensive, carefully chosen quotations.
 
-You will create one output: A **parchment-style narrative** (`[work-name]-narration.md`)
+You will create one output: A **parchment-style narrative** (`[work-name]-narration.html`)
 
 Follow the four phases below in order.
 
@@ -149,7 +149,7 @@ Save to `.readweave/[work-slug]/` with all annotated excerpts and narrative flow
 
 ## Phase 4: Generate Parchment Narration
 
-Create a flowing markdown document: `[work-name]-narration.md`
+Create a parchment-styled HTML document: `[work-name]-narration.html`
 
 Derive `[work-name]` from the work's title: lowercase, kebab-case, drop articles.
 
@@ -285,25 +285,7 @@ The excerpts above are the author's own words, preserved as written.
 
 ## Final Output
 
-By default, create **both** outputs:
-1. `[work-name]-narration.md` — Markdown version for portability and editing
-2. `[work-name]-narration.html` — Parchment-styled HTML for beautiful reading experience
-
-If the user specifies `--markdown-only`, generate only the Markdown file.  
-If the user specifies `--html-only`, generate only the HTML file.
-
----
-
-### Markdown Output
-
-Save as `[work-name]-narration.md`:
-- A single markdown file
-- Self-contained and readable on its own
-- Rich with the author's original voice
-- Framed by warm, knowledgeable narration
-- Following a clear narrative arc
-
----
+Create a single parchment-styled HTML output:
 
 ### HTML Output
 
@@ -338,6 +320,12 @@ Save as `[work-name]-narration.html`:
    - Use smart quotes: `&ldquo;` and `&rdquo;` for double quotes, `&lsquo;` and `&rsquo;` for single quotes
    - Use `&mdash;` for em-dashes
    - Use `&hellip;` for ellipses in elisions
+
+Save as `[work-name]-narration.html`:
+- A single self-contained HTML file that works offline
+- Rich with the author's original voice
+- Framed by warm, knowledgeable narration
+- Following a clear narrative arc
 
 The HTML output provides:
 - **Beautiful parchment aesthetic** with warm colors and elegant typography
