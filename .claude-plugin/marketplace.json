@@ -1,14 +1,14 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "irfanabduhu",
-  "description": "Distill books, web writings, video, and academic papers into elegant presentations and reading guides",
+  "description": "Distill books, web writings, video, audio, documentation, and discussions into elegant presentations and reading guides",
   "owner": {
     "name": "Irfanul Hoque"
   },
   "plugins": [
     {
       "name": "readweave",
-      "description": "Distill books, web writings, video, and academic papers into elegant presentations and reading guides. Includes /read (single book), /master (CS/technical book with active recall + code slides), /study (multi-book), /paper (single academic paper), /survey (multi-paper research thread), /digest (web article), /crawl (blog index), /watch (YouTube video), and /playlist (YouTube playlist) commands.",
+      "description": "Distill books, web writings, video, audio, documentation, and discussions into elegant presentations and reading guides. Includes /read (single book), /master (CS/technical book), /study (multi-book), /narrate (parchment narration), /paper (academic paper), /survey (multi-paper), /digest (web article), /crawl (blog index), /research (topic from scratch), /watch (YouTube video), /playlist (YouTube playlist), /listen (podcast/audio episode), /podcast (podcast series), /docs (documentation site), and /thread (discussion thread) commands.",
       "author": {
         "name": "Irfanul Hoque"
       },

@@ -22,6 +22,10 @@ Refer to the following command definitions in the `commands/` directory of this 
 - **Blog Thread Weaving**: Use `commands/crawl.md`. Groups blog posts into thematic threads.
 - **YouTube Video Deep-Dive**: Use `commands/watch.md`. Single video transcript analysis.
 - **YouTube Playlist**: Use `commands/playlist.md`. Curated sequence of videos.
+- **Single Podcast/Audio Episode**: Use `commands/listen.md`. Transcribes and distills a podcast episode or audio file (mp3, wav, m4a).
+- **Podcast Series**: Use `commands/podcast.md`. Traces themes across multiple podcast episodes from an RSS feed or audio files.
+- **Technical Documentation**: Use `commands/docs.md`. Crawls a documentation site and builds a progressive learning-path presentation.
+- **Discussion Thread**: Use `commands/thread.md`. Captures the dialectic structure of Twitter/X threads, Reddit posts, HN discussions, and forum threads.
 
 ## Core Mandates
 
