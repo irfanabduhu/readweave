@@ -446,7 +446,7 @@ After all agents complete, follow the verification checklist from the chunked ge
         <div class="code-context"><p>[prose before the code — what problem is this solving?]</p></div>
         <pre><code class="language-python">[exact code from book]</code></pre>
         <div class="code-context code-context--after"><p>[prose after the code — what does this demonstrate?]</p></div>
-        <p class="page-source">Ch. N &mdash; Section Name</p>
+        <p class="page-source">Ch. N — Section Name</p>
       </div>
     </div>
     <div class="margin">
@@ -511,9 +511,9 @@ After all agents complete, follow the verification checklist from the chunked ge
 ```
 
 ### Formatting rules (reused from `read`):
-- Use `<span class="elide">[&hellip;]</span>` for elisions within prose excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
-- Use `&middot;` as separator in chapter labels and author lines
+- Use `<span class="elide">[…]</span>` for elisions within prose excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
+- Use `·` as separator in chapter labels and author lines
 - Apply `drop-cap` class to the first `.excerpt` on most prose excerpt slides
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 - Prism.js language class on every `<code>` element (`language-python`, `language-c`, `language-java`, `language-javascript`, `language-go`, `language-rust`, `language-pseudocode` for algorithm descriptions)

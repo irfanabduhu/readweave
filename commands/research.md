@@ -367,7 +367,7 @@ Record these connections — they become cross-reference margin notes and evolut
 
 ### Passage length:
 - Sweet spot: 40-200 words. Short enough to read on a slide, long enough to carry meaning.
-- Use `<span class="elide">[&hellip;]</span>` for minimal trims.
+- Use `<span class="elide">[…]</span>` for minimal trims.
 - Preserve inline citations and references where they add context.
 
 ### Representation balance:

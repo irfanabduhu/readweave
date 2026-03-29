@@ -99,7 +99,7 @@ From the candidate pool, select **8-15 excerpts** for the presentation.
 
 **Passage length:**
 - Sweet spot: 40-150 words / 2-6 sentences. Articles are denser than books — excerpts should be tighter.
-- Never truncate mid-thought. Use `<span class="elide">[&hellip;]</span>` for minimal trims.
+- Never truncate mid-thought. Use `<span class="elide">[…]</span>` for minimal trims.
 - Preserve the author's exact wording.
 
 ### Checkpoint: Save `selection.md` to `.readweave/[article-slug]/` with the argument map, selected excerpts, and critical context.
@@ -162,8 +162,8 @@ This voice also applies to all commentary prose: overview slides and discussion 
 - **Slide N+2 — Closing**: `class="slide no-margin"` — the article's thesis distilled + a final quotation + author/title/source attribution
 
 ### Formatting rules:
-- Use `<span class="elide">[&hellip;]</span>` for elisions within excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
+- Use `<span class="elide">[…]</span>` for elisions within excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
 - Apply `drop-cap` class to the first `.excerpt` on most excerpt slides
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 

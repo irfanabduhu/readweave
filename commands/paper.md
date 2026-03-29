@@ -133,7 +133,7 @@ From the candidate pool, select **10-18 excerpts** for the presentation.
 - Sweet spot: 40-180 words / 2-8 sentences. Papers are denser than books or articles.
 - For theorem statements: capture the full statement including conditions, even if compact.
 - For methodology: prefer the high-level description over procedural detail.
-- Use `<span class="elide">[&hellip;]</span>` for minimal trims. Never elide conditions from a formal claim.
+- Use `<span class="elide">[…]</span>` for minimal trims. Never elide conditions from a formal claim.
 - Preserve the author's exact wording, including notation and inline citations.
 
 ### Checkpoint: Save `selection.md` to `.readweave/[paper-slug]/` with the contribution map, selected excerpts, and key assumptions.
@@ -206,8 +206,8 @@ This voice also applies to all commentary prose: overview slides and discussion 
 - **Slide N+2 — Closing**: `class="slide no-margin"` — the paper's core contribution distilled + a final quotation (usually the paper's strongest claim or most honest limitation) + full citation (authors, title, venue, year, DOI/URL if available)
 
 ### Formatting rules:
-- Use `<span class="elide">[&hellip;]</span>` for elisions within excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
+- Use `<span class="elide">[…]</span>` for elisions within excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
 - Apply `drop-cap` class to the first `.excerpt` on most excerpt slides
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 - For inline math notation: use Unicode where possible (∀, ∃, ∈, ≤, →, α, β, etc.), or `<span class="math">...</span>` for short expressions. Avoid full LaTeX rendering — keep it readable.

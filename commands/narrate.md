@@ -317,9 +317,9 @@ Save as `[work-name]-narration.html`:
    - Wrap pull quotes (short, impactful excerpts) in `<blockquote class="pull-quote">...</blockquote>`
 
 4. **Typography**:
-   - Use smart quotes: `&ldquo;` and `&rdquo;` for double quotes, `&lsquo;` and `&rsquo;` for single quotes
-   - Use `&mdash;` for em-dashes
-   - Use `&hellip;` for ellipses in elisions
+   - Use literal Unicode smart quotes: `"` and `"` for double quotes, `'` and `'` for single quotes (do NOT use HTML entities — they break in CSS `content:` properties)
+   - Use `—` for em-dashes
+   - Use `…` for ellipses in elisions
 
 Save as `[work-name]-narration.html`:
 - A single self-contained HTML file that works offline

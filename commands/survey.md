@@ -156,7 +156,7 @@ From the candidate pool across all papers, select **8-15 excerpts per paper**. S
 **Passage length:**
 - Sweet spot: 40-180 words. Papers are dense; excerpts should be tight.
 - Preserve inline citations — they are part of the cross-paper story.
-- Use `<span class="elide">[&hellip;]</span>` for minimal trims.
+- Use `<span class="elide">[…]</span>` for minimal trims.
 
 ### 2d. Verify Excerpts Against Source
 

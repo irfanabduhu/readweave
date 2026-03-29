@@ -106,7 +106,7 @@ From the candidate pool, select **8-15 excerpts** for the presentation.
 
 **Passage length:**
 - Sweet spot: 40-150 words / 2-6 sentences. Spoken language is looser than written — trim light filler but preserve the speaker's natural rhythm.
-- Never truncate mid-thought. Use `<span class="elide">[&hellip;]</span>` for minimal trims.
+- Never truncate mid-thought. Use `<span class="elide">[…]</span>` for minimal trims.
 - Preserve the speaker's wording. Clean caption artifacts, but do not rewrite their sentences into "better" prose.
 
 **Cleaning repetitive words from excerpts:**
@@ -184,8 +184,8 @@ This voice also applies to all commentary prose: overview slides and discussion 
 - **Slide N+2 — Closing**: `class="slide no-margin"` — the video's thesis distilled + a final quotation + creator/title/date attribution
 
 ### Formatting rules:
-- Use `<span class="elide">[&hellip;]</span>` for elisions within excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
+- Use `<span class="elide">[…]</span>` for elisions within excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
 - Apply `drop-cap` class to the first `.excerpt` on most excerpt slides
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 

@@ -272,9 +272,9 @@ After all agents complete, follow the verification checklist from the chunked ge
 - **Slide N+2 — Closing**: `class="slide no-margin"` — the book's thesis distilled into a phrase + a final quotation + author/title/year attribution
 
 ### Formatting rules:
-- Use `<span class="elide">[&hellip;]</span>` for elisions within excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
-- Use `&middot;` as separator in chapter labels and author lines
+- Use `<span class="elide">[…]</span>` for elisions within excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
+- Use `·` as separator in chapter labels and author lines
 - Apply `drop-cap` class to the first `.excerpt` on most excerpt slides
 - Use `<em>` for italics within excerpts (book titles, emphasis)
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC

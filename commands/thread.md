@@ -154,7 +154,7 @@ From the candidate pool, select **8-20 excerpts** for the presentation.
 - Sweet spot: 30-200 words. Thread posts are often short and punchy — respect that format.
 - For reply chains (claim → rebuttal → counter): capture enough of each turn to show the exchange. These may run to 300+ words across multiple speakers.
 - Preserve the author's exact wording, including their formatting (bold, italics, lists).
-- Use `<span class="elide">[&hellip;]</span>` for minimal trims.
+- Use `<span class="elide">[…]</span>` for minimal trims.
 
 ### Checkpoint: Save `selection.md` to `.readweave/[thread-slug]/` with the dialectic map, selected excerpts, conversation analysis, and key turns.
 
@@ -227,8 +227,8 @@ This voice also applies to all commentary prose: overview slides and discussion 
 - **Slide N+2 — Closing**: `class="slide no-margin"` — what the thread produces: the insight, the unresolved tension, or the productive disagreement. A final quotation (often the synthesis or the most memorable formulation) + attribution with link to the original thread.
 
 ### Formatting rules:
-- Use `<span class="elide">[&hellip;]</span>` for elisions within excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
+- Use `<span class="elide">[…]</span>` for elisions within excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
 - Apply `drop-cap` class to the first `.excerpt` on single-author excerpt slides (not dialogue slides)
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 - Use `<span class="speaker">[@username]:</span>` for speaker attribution

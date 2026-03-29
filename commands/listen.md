@@ -143,7 +143,7 @@ From the candidate pool, select **10-18 excerpts** for the presentation.
 **Passage length:**
 - Sweet spot: 40-180 words / 2-8 sentences. Spoken language is looser — trim filler but preserve the speaker's natural rhythm.
 - For dialogue exchanges: capture enough turns to show the full exchange (may run to 200+ words).
-- Never truncate mid-thought. Use `<span class="elide">[&hellip;]</span>` for minimal trims.
+- Never truncate mid-thought. Use `<span class="elide">[…]</span>` for minimal trims.
 - Preserve the speaker's wording. Clean artifacts, but do not rewrite their sentences into "better" prose.
 
 **Speaker attribution in excerpts:**
@@ -212,8 +212,8 @@ This voice also applies to all commentary prose: overview slides and discussion 
 - **Slide N+2 — Closing**: `class="slide no-margin"` — the episode's thesis distilled + a final quotation + host/guest/podcast/date attribution
 
 ### Formatting rules:
-- Use `<span class="elide">[&hellip;]</span>` for elisions within excerpts
-- Use `&mdash;` for em-dashes, `&lsquo;`/`&rsquo;` for single quotes, `&ldquo;`/`&rdquo;` for double quotes
+- Use `<span class="elide">[…]</span>` for elisions within excerpts
+- Use literal Unicode: `—` for em-dashes, `'` / `'` for single quotes, `"` / `"` for double quotes (do NOT use HTML entities — they break in CSS `content:` properties)
 - Apply `drop-cap` class to the first `.excerpt` on most single-speaker excerpt slides (not dialogue slides)
 - Each slide needs a descriptive `data-title` attribute for the sidebar TOC
 - Use `<span class="speaker">[Name]:</span>` for speaker attribution in dialogue excerpts

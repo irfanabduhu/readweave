@@ -305,9 +305,9 @@ Each comment uses this structure:
   ```
 - Use `<div class="section-ornament"></div>` for section breaks
 - Use `<hr>` for minor section breaks
-- Use smart quotes: `&ldquo;`/`&rdquo;` and `&lsquo;`/`&rsquo;`
-- Use `&mdash;` for em-dashes
-- Use `&hellip;` for ellipses
+- Use literal Unicode smart quotes: `"` / `"` and `'` / `'` (do NOT use HTML entities — they break in CSS `content:` properties)
+- Use `—` for em-dashes
+- Use `…` for ellipses
 
 ### Length guidelines:
 
