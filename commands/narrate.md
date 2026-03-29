@@ -57,7 +57,7 @@ For each candidate passage, capture:
 - The **section/chapter** where it appears
 - A **one-line note** on why this passage matters — its role in the argument or its distinctive voice
 
-**What to look for — the five passage types:**
+**What to look for — the six passage types:**
 
 - **Opening invitations**: How the author draws us in — the hook, the framing, the promise
 - **Thesis crystallizations**: Where the core claim appears with maximum clarity

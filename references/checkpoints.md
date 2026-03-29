@@ -191,6 +191,43 @@ Saved here so it can be revised without regenerating everything.]
 
 ---
 
+### discussion.md (discord command only)
+
+```markdown
+# Discussion: [Source Title]
+<!-- source: [file path or URL] -->
+<!-- date: [ISO timestamp] -->
+<!-- command: discord -->
+
+## Forum Post
+- **Platform**: [Hacker News | Reddit]
+- **Title**: [Thread title — opinionated, not neutral]
+- **Submitted by**: [username]
+- **Body**: [Optional post body text, 1-3 sentences]
+
+## Dialectic Arc
+[Brief narrative of how the discussion develops: opening positions, key turns, where consensus forms or productively fractures. 3-5 sentences.]
+
+## Comments
+
+### C-1
+- **Username**: [username]
+- **Archetype**: [practitioner | academic | contrarian | builder | skeptic | historian | synthesizer | devils-advocate | newcomer | witness]
+- **Parent**: [top-level | C-N]
+- **Score**: [integer]
+- **Timestamp**: [relative, e.g., "6 hours ago"]
+- **Highlighted**: [yes | no]
+- **Tag**: [practitioner | academic | contrarian | builder | none]
+- **Body**:
+
+[Comment text, preserving paragraph breaks. May include blockquotes, code, emphasis.]
+
+### C-2
+...
+```
+
+---
+
 ## What Gets Cached vs. Not
 
 **Always cache:**

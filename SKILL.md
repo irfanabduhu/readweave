@@ -15,6 +15,7 @@ Refer to the following command definitions in the `commands/` directory of this 
 - **Technical Book Mastery**: Use `commands/master.md`. CS/technical book with code slides, active recall, and challenges.
 - **Multi-Book Synthesis**: Use `commands/study.md`. Unified maps for multiple book files.
 - **Narrative Retelling**: Use `commands/narrate.md`. Friendly, parchment-style narration with extensive quotations from any source type.
+- **Discord (Narration + Debate)**: Use `commands/discord.md`. Narrates a work then stages a vigorous simulated forum debate (20-40 HN/Reddit comments) arguing for and against the ideas.
 - **Single Paper Deep-Dive**: Use `commands/paper.md`. Deep reading of a technical/academic paper (PDF).
 - **Multi-Paper Survey**: Use `commands/survey.md`. Trace a research thread across related papers.
 - **Web Article Deep-Dive**: Use `commands/digest.md`. Best for individual URLs or essays.
